@@ -9,7 +9,6 @@ Runtime = 12 ms (Beats 36.79%) = O(n)
 Memory = 47.36% (Beats 69.79%) = O(n)
  */
 
-
 //public class Solution {
 //    public int majorityElement(int[] nums) {
 //
