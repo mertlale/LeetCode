@@ -1,17 +1,23 @@
 package com.leetcode.TwoSum;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //  Solution 1
 //  Time Complexity: O(n); Space Complexity: O(1);
-public class Solution {
+class Solution {
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numMap = new HashMap<>();
+        int n = nums.length;
 
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = 1; j < nums.length; j++) {
-                if (i < j && (nums[i] + nums[j] == target)) {
-                    return new int[]{i, j};
-                }
+        for (int i = 0; i < n; i++) {
+            int complement = target - nums[i];
+            if (numMap.containsKey(complement)) {
+                return new int[]{numMap.get(complement), i};
             }
+            numMap.put(nums[i], i);
         }
-        return null;
+
+        return new int[]{}; // No solution found
     }
 }
